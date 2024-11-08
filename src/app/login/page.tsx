@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useAuth } from "../components/auth-provider";
 export default function Login() {
 
-    const { isLoggedIn, setIsLoggedIn } = useAuth();
+    const { setIsLoggedIn } = useAuth();
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -19,7 +19,6 @@ export default function Login() {
         if (email && password) {
             if (email === "admin" && password === "admin") {
                 setIsLoggedIn(true)
-                console.log('login', isLoggedIn)
                 redirect("/dashboard")
             } else {
                 alert("Invalid email or password")
